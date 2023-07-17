@@ -74,7 +74,7 @@ loadUser = (data) => {
     const image = document.getElementById('face');
     const height = Number(image.height);
     const width = Number(image.width);
-    fetch('http://localhost:3001/image', {
+    fetch('https://smart-brain-bmca.onrender.com/image', {
       method: 'PUT',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -102,7 +102,7 @@ loadUser = (data) => {
 
   onButtonSubmit = (event) => {
     this.setState({imageUrl: this.state.input});
-    fetch('http://localhost:3001/image', {
+    fetch('https://smart-brain-bmca.onrender.com/image', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
