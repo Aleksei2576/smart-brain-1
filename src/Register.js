@@ -41,7 +41,6 @@ class Register extends React.Component {
 				this.props.loadUser(this.state);
 			}
 		})
-		.catch(err => res.status(400).json("Error")
 	}
 	render(){
 		return (
