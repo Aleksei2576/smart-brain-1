@@ -1,0 +1,35 @@
+.nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.zoidberg {
+  background: rgb(2,0,36);
+  height: 100px;
+  box-shadow: 10px;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,171,251,1) 0%, rgba(245,21,121,1) 100%, rgba(85,255,15,1) 100%);
+}
+
+button {
+	border: none;
+}
+
+.box{
+	position: absolute;
+	display: flex;
+	box-shadow: 0 0 0 3px #149df2 inset;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.face{
+	display: flex;
+	justify-content: center;
+}
