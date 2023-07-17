@@ -39,9 +39,9 @@ class Register extends React.Component {
 			if (user.id){
 				this.props.signinChange('home');
 				this.props.loadUser(this.state);
-				console.log(this.state)
 			}
 		})
+		.catch(err => res.status(400).json("Error")
 	}
 	render(){
 		return (
