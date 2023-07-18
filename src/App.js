@@ -67,8 +67,7 @@ loadUser = (data) => {
     this.setState({input: event.target.value})
   }
 
-  onButtonSubmit = (e) => {
-    e.preventDefault();
+  onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
     fetch('https://smart-brain-api-0tsz.onrender.com/box', {
       method: 'post',
