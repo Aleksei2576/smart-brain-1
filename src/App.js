@@ -24,6 +24,7 @@ class App extends Component {
         joined: ''
       }
     }
+  }
 
 loadUser = (data) => {
   this.setState({user: {
@@ -90,7 +91,7 @@ loadUser = (data) => {
       this.setState({route: 'signin'})
     }  
   }
-;
+  
   render(){
       return (
         <div>
