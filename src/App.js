@@ -74,7 +74,7 @@ loadUser = (data) => {
     const image = document.getElementById('face');
     const height = Number(image.height);
     const width = Number(image.width);
-    fetch('https://smart-brain-qqks.onrender.com/image', {
+    fetch('https://smart-brain-api-0tsz.onrender.com/image', {
       method: 'PUT',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -102,7 +102,7 @@ loadUser = (data) => {
 
   onButtonSubmit = (event) => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://smart-brain-qqks.onrender.com/image', {
+    fetch('https://smart-brain-api-0tsz.onrender.com/image', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
