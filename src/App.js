@@ -62,7 +62,7 @@ loadUser = (data) => {
               right: width - boundingBox.right_col*width
               }
 
-    this.setState({intitialState.box: box});
+    this.setState({intitialState.box: box})
   }
 
   onInputChange = (event) => {
@@ -106,7 +106,7 @@ loadUser = (data) => {
                <ImageLinkForm onInputChange = {this.onInputChange}
                               onButtonSubmit = {this.onButtonSubmit} />
                <FaceRecognition imageUrl = {this.state.imageUrl}
-                                box = {this.state.box} />
+                                box = {intitialState.box} />
               </div>
             :(
               this.state.route === 'signin'
