@@ -25,7 +25,7 @@ class Register extends React.Component {
 
 	onSubmit = (e) => {
 		e.preventDefault();
-		fetch('https://smart-brain-qqks.onrender.com/register', {
+		fetch('https://smart-brain-api-0tsz.onrender.com/register', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
