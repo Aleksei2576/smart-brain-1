@@ -62,7 +62,7 @@ loadUser = (data) => {
               right: width - boundingBox.right_col*width
               }
 
-    this.setState({intitialState.box: box})
+    this.setState({intitialState.box: box});
   }
 
   onInputChange = (event) => {
@@ -82,22 +82,14 @@ loadUser = (data) => {
     .then(data => this.calculateBox(data))
 
   }
-
-  // onButtonSubmit = (event) => {
-  //   this.setState({imageUrl: this.state.input});
-  //   fetch("https://api.clarifai.com/v2/models/face-detection/outputs", returnFaceBox(this.state.input))
-  //   .then(response => response.json())
-  //   .then(data => this.calculateBox(data))
-  //   .catch(error => console.log('error', error));
-  // }
-
+      
   signinChange = (route) => {
     if (route === 'home'){
       this.setState({isSignin: true})
     }
     this.setState({route: route}) 
     if (route === 'signout'){
-      this.setState({isSignin: intitialState})
+      this.setState({isSignin: intitialState.isSignin})
       this.setState({route: 'signin'})
     }  
   }
