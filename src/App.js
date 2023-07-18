@@ -7,7 +7,10 @@ import SignIn from './SignIn';
 import Register from './Register';
 import './App.css';
 
-const intitialState = {
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
       input: '',
       imageUrl: '',
       box: {},
@@ -21,12 +24,6 @@ const intitialState = {
         joined: ''
       }
     }
-
-class App extends Component {
-  constructor(){
-    super();
-    this.state = intitialState
-  }
 
 loadUser = (data) => {
   this.setState({user: {
@@ -62,7 +59,7 @@ loadUser = (data) => {
               right: width - boundingBox.right_col*width
               }
 
-    this.setState({intitialState.box: box})
+    this.setState({box: box})
   }
 
   onInputChange = (event) => {
@@ -89,7 +86,7 @@ loadUser = (data) => {
     }
     this.setState({route: route}) 
     if (route === 'signout'){
-      this.setState({isSignin: intitialState.isSignin})
+      this.setState({isSignin: false})
       this.setState({route: 'signin'})
     }  
   }
@@ -106,7 +103,7 @@ loadUser = (data) => {
                <ImageLinkForm onInputChange = {this.onInputChange}
                               onButtonSubmit = {this.onButtonSubmit} />
                <FaceRecognition imageUrl = {this.state.imageUrl}
-                                box = {intitialState.box} />
+                                box = {this.state.box} />
               </div>
             :(
               this.state.route === 'signin'
