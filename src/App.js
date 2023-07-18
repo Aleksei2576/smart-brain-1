@@ -90,7 +90,7 @@ loadUser = (data) => {
       this.setState({route: 'signin'})
     }  
   }
-
+;
   render(){
       return (
         <div>
