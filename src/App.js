@@ -77,8 +77,7 @@ loadUser = (data) => {
       })
     })
     .then(res => res.json())
-    .then(data => this.calculateBox(data))
-
+    .then(data => console.log(data)
   }
       
   signinChange = (route) => {
