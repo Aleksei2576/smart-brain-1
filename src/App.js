@@ -7,37 +7,6 @@ import SignIn from './SignIn';
 import Register from './Register';
 import './App.css';
 
-// const PAT = '9b35a24d8d174e648eb033c6164a0acc';
-// const USER_ID = 'aleksei';       
-// const APP_ID = 'aleksei';
-
-// function returnFaceBox(imgUrl){
-//   const raw = JSON.stringify({
-//           "user_app_id": {
-//               "user_id": USER_ID,
-//               "app_id": APP_ID
-//           },
-//           "inputs": [
-//               {
-//                   "data": {
-//                       "image": {
-//                           "url": imgUrl
-//                       }
-//                   }
-//               }
-//           ]
-//       });
-
-//     return {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Authorization': 'Key ' + PAT
-//         },
-//         body: raw
-//     };
-// }
-
 const intitialState = {
       input: '',
       imageUrl: '',
@@ -56,7 +25,7 @@ const intitialState = {
 class App extends Component {
   constructor(){
     super();
-    this.state = intitialState
+    this.state = intitialState,
   }
 
 loadUser = (data) => {
@@ -93,7 +62,7 @@ loadUser = (data) => {
               right: width - boundingBox.right_col*width
               }
 
-    this.setState({box: box})
+    this.setState({intitialState.box: box})
   }
 
   onInputChange = (event) => {
