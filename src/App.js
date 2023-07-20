@@ -70,14 +70,14 @@ loadUser = (data) => {
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
     fetch('https://smart-brain-api-0tsz.onrender.com/box', {
-      method: 'get',
+      method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-      a: this.state.input
+      input: this.state.input
       })
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => calculateBox(data))
   }
       
   signinChange = (route) => {
