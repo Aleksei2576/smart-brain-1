@@ -73,11 +73,11 @@ loadUser = (data) => {
       method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-      input: this.state.input
+      a: this.state.input
       })
     })
     .then(response => response.json())
-    .then(data => this.calculateBox(data))
+    .then(data => console.log(data))
   }
       
   signinChange = (route) => {
