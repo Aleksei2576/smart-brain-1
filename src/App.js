@@ -69,8 +69,8 @@ loadUser = (data) => {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://smart-brain-api-0tsz.onrender.com/box', {
-      method: 'put',
+    fetch('https://smart-brain-api-0tsz.onrender.com/image'', {
+      method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
       input: this.state.input
