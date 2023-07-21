@@ -100,7 +100,7 @@ loadUser = (data) => {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://api.clarifai.com/v2/models/face-detection/outputs', returnFaceBox(imgUrl))
+    fetch('https://api.clarifai.com/v2/models/face-detection/outputs', returnFaceBox(this.state.input))
     .then(response => response.json())
     .then(data => this.calculateBox(data))
   }
