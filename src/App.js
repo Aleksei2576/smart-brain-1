@@ -7,6 +7,37 @@ import SignIn from './SignIn';
 import Register from './Register';
 import './App.css';
 
+const PAT = '9b35a24d8d174e648eb033c6164a0acc';
+const USER_ID = 'aleksei';       
+const APP_ID = 'aleksei';
+
+function returnFaceBox(imgUrl){
+  const raw = JSON.stringify({
+          "user_app_id": {
+              "user_id": USER_ID,
+              "app_id": APP_ID
+          },
+          "inputs": [
+              {
+                  "data": {
+                      "image": {
+                          "url": imgUrl
+                      }
+                  }
+              }
+          ]
+      });
+
+    return {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': 'Key ' + PAT
+        },
+        body: raw
+    };
+}
+
 class App extends Component {
   constructor(){
     super();
@@ -69,13 +100,7 @@ loadUser = (data) => {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://smart-brain-api-0tsz.onrender.com/image', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-      input: this.state.input
-      })
-    })
+    fetch('https://api.clarifai.com/v2/models/face-detection/outputs', returnFaceBox(imgUrl))
     .then(response => response.json())
     .then(data => this.calculateBox(data))
   }
